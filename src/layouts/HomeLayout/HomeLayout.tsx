@@ -1,4 +1,4 @@
-import RegisterHeader from '@/components/RegisterHeader'
+import Header from '@/components/Header'
 import { useTheme } from '@/components/ThemeProvider'
 import React from 'react'
 import Snowfall from 'react-snowfall'
@@ -7,7 +7,7 @@ interface Props {
   children: React.ReactNode
 }
 
-export default function RegisterLayout({ children }: Props) {
+export default function HomeLayout({ children }: Props) {
   const context = useTheme()
   const { theme } = context
 
@@ -15,12 +15,12 @@ export default function RegisterLayout({ children }: Props) {
     <div className='flex flex-col min-h-screen'>
       <Snowfall
         color={theme === 'light' ? 'black' : 'white'}
-        snowflakeCount={100}
+        snowflakeCount={50}
         speed={[0, 2]}
         wind={[0.5, 2]}
         radius={[0.5, 2.5]}
       />
-      <RegisterHeader />
+      <Header />
       <main className='flex-grow w-full'>
         <div className='container py-8 px-4'>{children}</div>
       </main>

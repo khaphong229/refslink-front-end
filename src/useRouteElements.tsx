@@ -1,7 +1,7 @@
 import { useRoutes } from 'react-router-dom'
 import path from '@/constants/path'
 import { lazy, Suspense } from 'react'
-import RegisterLayout from '@/layouts/RegisterLayout'
+import RegisterLayout from '@/layouts/HomeLayout'
 import Landing from '@/pages/Landing'
 
 const Login = lazy(() => import('./pages/Login'))

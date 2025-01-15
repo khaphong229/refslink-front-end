@@ -6,7 +6,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Input } from '@/components/ui/input'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Link } from 'react-router-dom'
-import loginImg from '@/assets/images/login/login.png'
+import { Google, Facebook } from 'developer-icons'
 
 const formSchema = z.object({
   email: z.string().min(2, {
@@ -33,13 +33,24 @@ export default function ProfileForm() {
 
   return (
     <div className='flex items-center justify-center min-h-[700px]'>
-      <div className='grid md:grid-cols-2 items-center gap-6 max-w-6xl w-full'>
+      <div className='max-w-6xl w-full'>
         <div className='w-full rounded-lg p-6 max-w-md mx-auto shadow-[0_2px_22px_-4px_rgba(93,96,127,0.2)]'>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-4'>
-              <div className=''>
+              <div>
                 <h3 className='text-primary text-3xl font-bold'>Đăng nhập</h3>
-                <p className='text-primary/80 text-sm mt-4 leading-relaxed'>Đăng nhập tài khoản bằng Email!</p>
+                <p className='text-primary/80 text-sm mt-4 leading-relaxed'>Trải nghiệm ngay!</p>
+              </div>
+              <div className='grid grid-cols-2 items-center gap-4'>
+                <Button variant={'outline'} size={'icon'} className='w-full'>
+                  <Google /> Google
+                </Button>
+                <Button variant={'outline'} size={'icon'} className='w-full'>
+                  <Facebook /> Facebook
+                </Button>
+              </div>
+              <div>
+                <span className='text-primary/80 text-sm '>Đăng nhập bằng email</span>
               </div>
               <FormField
                 control={form.control}
@@ -93,13 +104,6 @@ export default function ProfileForm() {
               </p>
             </form>
           </Form>
-        </div>
-        <div className='max-md:mt-8 hidden md:block'>
-          <img
-            src={loginImg}
-            className='w-full aspect-[71/50] max-md:w-4/5 mx-auto block object-cover'
-            alt='Dining Experience'
-          />
         </div>
       </div>
     </div>

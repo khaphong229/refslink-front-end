@@ -10,7 +10,7 @@ import {
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
 
-export default function RegisterHeader() {
+export default function Header() {
   const navigate = useNavigate()
   return (
     <header className='container px-4 py-4 sticky top-0 left-0 backdrop-blur-xl'>
